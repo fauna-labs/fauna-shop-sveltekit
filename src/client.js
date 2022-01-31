@@ -19,14 +19,3 @@ export default createClient({
     };
   },
 }); 
-
-
-export const clientWithCookieSession = token => createClient({
-  url: 'https://graphql.us.fauna.com/graphql',
-  fetchOptions: () => {
-    console.log('token', token);
-    return {
-      headers: { authorization: token ? `Bearer ${token}` : '' },
-    };
-  },
-});
