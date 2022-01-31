@@ -26,7 +26,8 @@
     }
     const { name, email, password } = data;
     const resp = await registerMutation({ name, email, password })
-    if (resp.data?.registerOwner) {
+    if (resp.data.registerOwner) {
+      alert('Successfully registered');
       goto('/');
     } 
     if(resp.error) {

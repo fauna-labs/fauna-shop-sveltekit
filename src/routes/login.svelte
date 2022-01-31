@@ -1,8 +1,6 @@
 <script>
   import { setClient, mutation } from '@urql/svelte';
-  import Cookies from 'js-cookie';
   import client from '../client';
-  import { userSession } from '../store';
   import { goto } from '$app/navigation';
 
   setClient(client);
@@ -15,8 +13,6 @@
         login(email: $email, password: $password) {
           secret
           ttl
-          email
-          ownerId
         }
       }
     `,
@@ -32,17 +28,10 @@
     const { email, password } = data;
     const resp = await loginMutation({ email, password })
     
+    console.log('resp', resp)
+
     if(resp.data?.login) {
       alert('Login Successful');
-
-      Cookies.set(
-        'fauna-session', 
-        JSON.stringify(resp.data.login),
-        { expires: new Date(resp.data.login.ttl) }
-      );
-
-      userSession.update(() => (resp.data.login));
-
       goto('/')
     }
     if(resp.error) {
