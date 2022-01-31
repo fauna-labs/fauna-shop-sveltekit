@@ -3,6 +3,7 @@
   import Cookies from 'js-cookie';
   import client from '../client';
   import { goto } from '$app/navigation';
+  import { userSession } from '../store';
 
   setClient(client);
 
@@ -38,6 +39,7 @@
         JSON.stringify(resp.data.login),
         { expires: new Date(resp.data.login.ttl) }
       )
+      userSession.update(() => (resp.data.login));
       goto('/')
     }
     if(resp.error) {
