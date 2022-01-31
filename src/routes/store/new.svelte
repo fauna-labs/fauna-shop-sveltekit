@@ -66,7 +66,7 @@
 
       console.log('resp', resp);
       if(resp.data.createStore) {
-        alert('Post created successfully')
+        alert('Store created successfully')
         goto('/')
       }
     } catch (error) {
