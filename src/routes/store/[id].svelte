@@ -1,3 +1,6 @@
+<!-- Copyright Fauna, Inc.
+SPDX-License-Identifier: MIT-0 -->
+
 <script lang="js">
   import { operationStore, query, setClient } from '@urql/svelte';
   import { page } from '$app/stores';

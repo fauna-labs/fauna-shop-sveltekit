@@ -1,3 +1,6 @@
+<!-- Copyright Fauna, Inc.
+SPDX-License-Identifier: MIT-0 -->
+
 <script lang="js">
   import { setClient, mutation } from '@urql/svelte';
   import client from '../client'

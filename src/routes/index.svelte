@@ -1,3 +1,6 @@
+<!-- Copyright Fauna, Inc.
+SPDX-License-Identifier: MIT-0 -->
+
 <script>
   import { operationStore, query, setClient } from '@urql/svelte';
 	import {clientWithCookieSession} from '../client';

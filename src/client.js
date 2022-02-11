@@ -1,3 +1,6 @@
+/* Copyright Fauna, Inc.
+SPDX-License-Identifier: MIT-0 */
+
 import { createClient } from '@urql/svelte';
 
 export default createClient({

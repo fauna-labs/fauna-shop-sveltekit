@@ -1,3 +1,6 @@
+<!-- Copyright Fauna, Inc.
+SPDX-License-Identifier: MIT-0 -->
+
 <script>
   import { setClient, mutation } from '@urql/svelte';
   import Cookies from 'js-cookie';
